@@ -8,6 +8,8 @@ public class PlayerWeapon : MonoBehaviour
 	[SerializeField] private float scaleParam;
 	[SerializeField] private float scaleTime;
 	[SerializeField] private float minSize;
+	[SerializeField] private bool canShrink;
+	[SerializeField] private bool canGrow;
 	
     private LineRenderer _lr;
     
@@ -39,14 +41,14 @@ public class PlayerWeapon : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             activeColor = _growColor;
-            fireGrow = true;
+            fireGrow = true && canGrow;
             fireShrink = false;
             
         }
         else if (Input.GetMouseButtonDown(1))
         {
             activeColor = _shrinkColor;
-            fireShrink = true;
+            fireShrink = true && canShrink;
             fireGrow = false;
         }
         else if (!Input.GetMouseButton(0) && !Input.GetMouseButton(1))
@@ -140,7 +142,14 @@ public class PlayerWeapon : MonoBehaviour
 		while (elapsedTime < scaleTime)
 		{
 			// Calculate the new scale
-			objectTransform.localScale = Vector2.Lerp(initialScale, targetScale, elapsedTime / scaleTime);
+			Vector2 newScale = Vector2.Lerp(initialScale, targetScale, elapsedTime / scaleTime);
+			// Check for collisions
+			if (CheckCollisionAlongAxis(objectTransform, newScale, scale))
+			{
+				Debug.Log("STOP");
+				break;
+			}
+			objectTransform.localScale = newScale;
 
 			// Increment elapsed time
 			elapsedTime += Time.deltaTime;
@@ -196,4 +205,30 @@ public class PlayerWeapon : MonoBehaviour
 		// Ensure the final scale is set
 		objectTransform.localScale = targetScale;
 	}
+	
+	private bool CheckCollisionAlongAxis(Transform objectTransform, Vector2 newScale, Vector2 scaleDirection)
+    {
+        // Check for collision along the x and y axis separately
+        bool collisionX = false;
+        bool collisionY = false;
+    
+        // Check along X-axis
+        if (scaleDirection.x != 0)
+        {
+            Vector2 boxSize = new Vector2(newScale.x, objectTransform.localScale.y);
+            Collider2D[] collidersX = Physics2D.OverlapBoxAll(objectTransform.position, boxSize, 0f);
+            collisionX = collidersX.Length > 2; // True if there are two or more colliders
+			Debug.Log(collidersX.Length);
+        }
+    
+        // Check along Y-axis
+        if (scaleDirection.y != 0)
+        {
+            Vector2 boxSize = new Vector2(objectTransform.localScale.x, newScale.y);
+            Collider2D[] collidersY = Physics2D.OverlapBoxAll(objectTransform.position, boxSize, 0f);
+            collisionY = collidersY.Length > 2; // True if there are two or more colliders
+        }
+    
+        return collisionX || collisionY;
+    }
 }

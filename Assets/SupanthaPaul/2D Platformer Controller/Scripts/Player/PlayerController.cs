@@ -29,9 +29,11 @@ namespace SupanthaPaul
 		[HideInInspector] public bool isDashing = false;
 		[HideInInspector] public bool actuallyWallGrabbing = false;
 		// controls whether this instance is currently playable or not
-		[HideInInspector] public bool isCurrentlyPlayable = false;
+		[HideInInspector] public bool isCurrentlyPlayable = true;
 
 		[SerializeField] private float jumpParam;
+		[SerializeField] private bool canShrink;
+		[SerializeField] private bool canGrow;
 
 	
 
@@ -54,6 +56,7 @@ namespace SupanthaPaul
 
 		void Start()
 		{
+			Debug.Log(canShrink ? "Shrinking" : "Growing");
 			// create pools for particles
 			PoolManager.instance.CreatePool(jumpEffect, 2);
 
@@ -63,13 +66,14 @@ namespace SupanthaPaul
 
 			m_rb = GetComponent<Rigidbody2D>();
 			m_dustParticle = GetComponentInChildren<ParticleSystem>();
-			transform.position = startPosition.position;
+            Restart();
 		}
 
 		private void Restart()
 		{
 			transform.position = startPosition.position;
-			
+			transform.rotation = startPosition.rotation;
+			transform.localScale = startPosition.localScale;
 		}
 
 		private void FixedUpdate()
@@ -148,14 +152,6 @@ namespace SupanthaPaul
 				Restart();	
 			}
 			
-			// run scale object raycast on mouse left
-			if (Input.GetButton("Fire1"))
-			{
-				ScaleObjectRaycast(true);
-			} else if (Input.GetButton("Fire2"))
-			{
-				ScaleObjectRaycast(false);
-			}
 		}
 
 		private void ScaleObjectRaycast(bool scale)
