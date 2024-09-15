@@ -16,7 +16,7 @@ namespace SupanthaPaul
 
 		public static bool Jump()
 		{
-			return Input.GetButtonDown(JumpInput);
+			return Input.GetButtonDown(JumpInput) || Input.GetKeyDown(KeyCode.W);
 		}
 
 
