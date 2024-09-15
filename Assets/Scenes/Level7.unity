@@ -324,7 +324,7 @@ PrefabInstance:
     - target: {fileID: 5199993795621529002, guid: f91806409bc0f4747833765b7152c77f,
         type: 3}
       propertyPath: LevelName
-      value: Level2
+      value: Level7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1073,7 +1073,7 @@ PrefabInstance:
     - target: {fileID: 5199993795621529002, guid: f91806409bc0f4747833765b7152c77f,
         type: 3}
       propertyPath: LevelName
-      value: Level2
+      value: Level7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1282,7 +1282,7 @@ PrefabInstance:
     - target: {fileID: 5199993795621529002, guid: f91806409bc0f4747833765b7152c77f,
         type: 3}
       propertyPath: LevelName
-      value: Level2
+      value: Level7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1668,7 +1668,7 @@ PrefabInstance:
     - target: {fileID: 5199993795621529002, guid: f91806409bc0f4747833765b7152c77f,
         type: 3}
       propertyPath: LevelName
-      value: Level2
+      value: Level7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1918,7 +1918,7 @@ PrefabInstance:
     - target: {fileID: 5199993795621529002, guid: f91806409bc0f4747833765b7152c77f,
         type: 3}
       propertyPath: LevelName
-      value: Level2
+      value: Level7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2132,7 +2132,7 @@ PrefabInstance:
     - target: {fileID: 5199993795621529002, guid: f91806409bc0f4747833765b7152c77f,
         type: 3}
       propertyPath: LevelName
-      value: Level2
+      value: Level7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2205,7 +2205,7 @@ PrefabInstance:
     - target: {fileID: 5199993795621529002, guid: f91806409bc0f4747833765b7152c77f,
         type: 3}
       propertyPath: LevelName
-      value: Level2
+      value: Level7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2424,7 +2424,7 @@ PrefabInstance:
     - target: {fileID: 5199993795621529002, guid: f91806409bc0f4747833765b7152c77f,
         type: 3}
       propertyPath: LevelName
-      value: Level2
+      value: Level7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2442,7 +2442,7 @@ PrefabInstance:
     - target: {fileID: -5842272258902938696, guid: 44abcabcfab99704abbdc6375c747719,
         type: 3}
       propertyPath: LevelName
-      value: Level3
+      value: StartMenu
       objectReference: {fileID: 0}
     - target: {fileID: 2590096974779200221, guid: 44abcabcfab99704abbdc6375c747719,
         type: 3}
@@ -2658,7 +2658,7 @@ PrefabInstance:
     - target: {fileID: 5199993795621529002, guid: f91806409bc0f4747833765b7152c77f,
         type: 3}
       propertyPath: LevelName
-      value: Level2
+      value: Level7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2955,7 +2955,7 @@ PrefabInstance:
     - target: {fileID: 5199993795621529002, guid: f91806409bc0f4747833765b7152c77f,
         type: 3}
       propertyPath: LevelName
-      value: Level2
+      value: Level7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3048,7 +3048,7 @@ PrefabInstance:
     - target: {fileID: 3612641316221135439, guid: 3c02ac99ebd71b24cb0f7c53261c4241,
         type: 3}
       propertyPath: aimDistance
-      value: 25
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3612641316221135439, guid: 3c02ac99ebd71b24cb0f7c53261c4241,
         type: 3}
@@ -3199,7 +3199,7 @@ PrefabInstance:
     - target: {fileID: 5199993795621529002, guid: f91806409bc0f4747833765b7152c77f,
         type: 3}
       propertyPath: LevelName
-      value: Level2
+      value: Level7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3272,7 +3272,7 @@ PrefabInstance:
     - target: {fileID: 5199993795621529002, guid: f91806409bc0f4747833765b7152c77f,
         type: 3}
       propertyPath: LevelName
-      value: Level2
+      value: Level7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3423,7 +3423,7 @@ PrefabInstance:
     - target: {fileID: 5199993795621529002, guid: f91806409bc0f4747833765b7152c77f,
         type: 3}
       propertyPath: LevelName
-      value: Level2
+      value: Level7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3574,7 +3574,7 @@ PrefabInstance:
     - target: {fileID: 5199993795621529002, guid: f91806409bc0f4747833765b7152c77f,
         type: 3}
       propertyPath: LevelName
-      value: Level2
+      value: Level7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3647,7 +3647,7 @@ PrefabInstance:
     - target: {fileID: 5199993795621529002, guid: f91806409bc0f4747833765b7152c77f,
         type: 3}
       propertyPath: LevelName
-      value: Level2
+      value: Level7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
