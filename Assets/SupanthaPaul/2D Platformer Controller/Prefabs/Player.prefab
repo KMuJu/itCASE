@@ -263,7 +263,7 @@ MonoBehaviour:
   actuallyWallGrabbing: 0
   isCurrentlyPlayable: 0
   jumpParam: 7.5
-  canShrink: 0
+  canShrink: 1
   canGrow: 1
 --- !u!114 &1173712999407116002
 MonoBehaviour:
