@@ -216,7 +216,7 @@ public class PlayerWeapon : MonoBehaviour
         if (scaleDirection.x != 0)
         {
             Vector2 boxSize = new Vector2(newScale.x, objectTransform.localScale.y* 0.5f);
-            Collider2D[] collidersX = Physics2D.OverlapBoxAll(objectTransform.position, boxSize, 0f);
+            Collider2D[] collidersX = Physics2D.OverlapBoxAll(objectTransform.position, boxSize, 0f, ~playerLayer);
             collisionX = collidersX.Length > 2; // True if there are two or more colliders
 			Debug.Log(collidersX.Length);
         }
@@ -225,7 +225,7 @@ public class PlayerWeapon : MonoBehaviour
         if (scaleDirection.y != 0)
         {
             Vector2 boxSize = new Vector2(objectTransform.localScale.x * 0.5f, newScale.y);
-            Collider2D[] collidersY = Physics2D.OverlapBoxAll(objectTransform.position, boxSize, 0f);
+            Collider2D[] collidersY = Physics2D.OverlapBoxAll(objectTransform.position, boxSize, 0f, ~playerLayer);
             collisionY = collidersY.Length > 2; // True if there are two or more colliders
         }
     

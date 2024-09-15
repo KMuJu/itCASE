@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3497719902856094174}
   - component: {fileID: 2590096974779200221}
   - component: {fileID: -5842272258902938696}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FinishPoint
   m_TagString: finishPoint
   m_Icon: {fileID: 0}
@@ -48,7 +48,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -90,3 +90,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29f08bf2b342bf64fa50dfbe3af9a9c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LevelName: 
