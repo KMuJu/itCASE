@@ -91,3 +91,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelName: 
+  deathSound: {fileID: 8300000, guid: d8752cd5f91cbcd43867d1d99fed5aeb, type: 3}
+  nextLevelSound: {fileID: 8300000, guid: 224dc6c210fd6224fb499ce8d0d49422, type: 3}
+  death: 0
