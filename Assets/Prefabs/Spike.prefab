@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3059132062133212934}
   - component: {fileID: 3620852783946049995}
   - component: {fileID: 5199993795621529002}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,3 +144,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelName: Demo
+  deathSound: {fileID: 8300000, guid: d8752cd5f91cbcd43867d1d99fed5aeb, type: 3}
+  nextLevelSound: {fileID: 8300000, guid: 224dc6c210fd6224fb499ce8d0d49422, type: 3}
+  death: 1

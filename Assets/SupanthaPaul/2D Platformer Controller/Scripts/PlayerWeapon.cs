@@ -14,6 +14,7 @@ public class PlayerWeapon : MonoBehaviour
     private LineRenderer _lr;
     
     public LayerMask playerLayer;
+    public LayerMask colLayer;
     
     public float aimDistance = 5f;
     
@@ -23,11 +24,16 @@ public class PlayerWeapon : MonoBehaviour
     
     public Color activeColor;
     
+    private AudioSource _audioSource; // R
+    public AudioClip fireSound; // The sound to play when firingeference to the AudioSource component
+    
+    
     // Start is called before the first frame update
     void Start()
     {
         _lr = GetComponent<LineRenderer>();
         activeColor = _neutralColor;
+        _audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -43,6 +49,10 @@ public class PlayerWeapon : MonoBehaviour
             activeColor = _growColor;
             fireGrow = true && canGrow;
             fireShrink = false;
+            if (fireGrow && _audioSource && fireSound)
+			{
+				_audioSource.PlayOneShot(fireSound); // Play the sound effect
+			}
             
         }
         else if (Input.GetMouseButtonDown(1))
@@ -50,6 +60,10 @@ public class PlayerWeapon : MonoBehaviour
             activeColor = _shrinkColor;
             fireShrink = true && canShrink;
             fireGrow = false;
+            if (fireShrink && _audioSource&& fireSound)
+			 {
+				 _audioSource.PlayOneShot(fireSound); // Play the sound effect
+			 }
         }
         else if (!Input.GetMouseButton(0) && !Input.GetMouseButton(1))
         {
@@ -216,7 +230,7 @@ public class PlayerWeapon : MonoBehaviour
         if (scaleDirection.x != 0)
         {
             Vector2 boxSize = new Vector2(newScale.x, objectTransform.localScale.y* 0.5f);
-            Collider2D[] collidersX = Physics2D.OverlapBoxAll(objectTransform.position, boxSize, 0f, ~playerLayer);
+            Collider2D[] collidersX = Physics2D.OverlapBoxAll(objectTransform.position, boxSize, 0f, ~colLayer);
             collisionX = collidersX.Length > 2; // True if there are two or more colliders
 			Debug.Log(collidersX.Length);
         }
@@ -225,7 +239,7 @@ public class PlayerWeapon : MonoBehaviour
         if (scaleDirection.y != 0)
         {
             Vector2 boxSize = new Vector2(objectTransform.localScale.x * 0.5f, newScale.y);
-            Collider2D[] collidersY = Physics2D.OverlapBoxAll(objectTransform.position, boxSize, 0f, ~playerLayer);
+            Collider2D[] collidersY = Physics2D.OverlapBoxAll(objectTransform.position, boxSize, 0f, ~colLayer);
             collisionY = collidersY.Length > 2; // True if there are two or more colliders
         }
     
