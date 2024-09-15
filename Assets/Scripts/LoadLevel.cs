@@ -9,6 +9,7 @@ public class LoadLevel : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log("Collision");
         if (collision.gameObject.tag == "Player")
         {
             SceneManager.LoadScene(LevelName);

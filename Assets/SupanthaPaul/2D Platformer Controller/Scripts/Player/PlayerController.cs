@@ -2,6 +2,7 @@
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
 namespace SupanthaPaul
@@ -66,14 +67,16 @@ namespace SupanthaPaul
 
 			m_rb = GetComponent<Rigidbody2D>();
 			m_dustParticle = GetComponentInChildren<ParticleSystem>();
-            Restart();
+			
+			
+			transform.position = startPosition.position;
+			transform.rotation = startPosition.rotation;
+			transform.localScale = startPosition.localScale;
 		}
 
 		private void Restart()
 		{
-			transform.position = startPosition.position;
-			transform.rotation = startPosition.rotation;
-			transform.localScale = startPosition.localScale;
+			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex,LoadSceneMode.Single);
 		}
 
 		private void FixedUpdate()
@@ -151,6 +154,10 @@ namespace SupanthaPaul
 			//{
 			//	Restart();	
 			//}
+			if (Input.GetKeyDown(KeyCode.R))
+			{
+				Restart();
+			}
 			
 		}
 
@@ -171,41 +178,6 @@ namespace SupanthaPaul
 			//Raycast(transform.position, direction, scale);
 		}
 
-		//private void Raycast(Vector2 origin, Vector2 direction, bool scale, bool mirrored = false)
-		//{
-		//	LayerMask mask = layer;
-		//	RaycastHit2D hit;
-		//	if (!mirrored)
-		//	{
-		//		hit = Physics2D.Raycast(origin, direction, Mathf.Infinity, layer);
-		//	}
-		//	else
-		//	{
-		//		hit = Physics2D.Raycast(origin + direction, direction, Mathf.Infinity);
-		//	}
-		//	if (hit.collider)
-		//	{
-		//		// Check if the hit object has a specific tag or component
-		//		if (hit.collider.CompareTag("scalable") || hit.collider.CompareTag("Player"))
-		//		{
-		//			var objectRigidbody = hit.collider.GetComponent<Rigidbody2D>();
-		//			
-		//			if (scale)
-		//			{
-		//				StartCoroutine(ScaleObject(hit.collider.transform, objectRigidbody, Vector2.one));
-		//			}
-		//			else
-		//			{
-		//				StartCoroutine(ScaleDownObject(hit.collider.transform, objectRigidbody, Vector2.one));
-		//			}
-		//		} else if (hit.collider.CompareTag("mirror"))
-		//		{
-		//			Vector2 position = hit.point - direction*0.1f;
-		//			Vector2 dir = new Vector2(direction.x*-1f, direction.y);
-		//			Raycast(position, dir, scale, true);
-		//		}
-		//	}
-		//}
 		
 
 		void Flip()
