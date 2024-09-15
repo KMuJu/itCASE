@@ -146,11 +146,11 @@ namespace SupanthaPaul
 				PoolManager.instance.ReuseObject(jumpEffect, groundCheck.position, Quaternion.identity);
 			}
 			
-			Vector2 pos = camera.WorldToScreenPoint(transform.position);
-			if (pos.y < 0)
-			{
-				Restart();	
-			}
+			//Vector2 pos = camera.WorldToScreenPoint(transform.position);
+			//if (pos.y < 0)
+			//{
+			//	Restart();	
+			//}
 			
 		}
 
